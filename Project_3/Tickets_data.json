@@ -79,6 +79,30 @@
             "ticket_type": "standard",
             "price": 500,
             "purchase_date": "2021-11-10 18:27:28.366854"
+        },
+        "61d6d61c-43d4-11ec-bc6a-5405dbc1cc23": {
+            "event": "Head of Digital Day",
+            "place": "Online",
+            "time": "25.11.2021 10:00",
+            "ticket_type": "standard",
+            "price": 700,
+            "purchase_date": "2021-11-12 18:19:59.532013"
+        },
+        "4ae439e5-447a-11ec-941c-5405dbc1cc23": {
+            "event": "Head of Digital Day",
+            "place": "Online",
+            "time": "25.11.2021 10:00",
+            "ticket_type": "standard",
+            "price": 700,
+            "purchase_date": "2021-11-13 14:07:37.492265"
+        },
+        "e9dd4cdb-447a-11ec-a981-5405dbc1cc23": {
+            "event": "Head of Digital Day",
+            "place": "Online",
+            "time": "25.11.2021 10:00",
+            "ticket_type": "standard",
+            "price": 700,
+            "purchase_date": "2021-11-13 14:12:04.198600"
         }
     }
 }
