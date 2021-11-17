@@ -1,0 +1,93 @@
+{
+  "Pizza": [
+    {
+      "name": "Margarita",
+      "ingredients": [
+        "tomatoes",
+        "mozzarella",
+        "basil"
+      ],
+      "weight": 340,
+      "price": 169,
+      "day": "Monday"
+    },
+    {
+      "name": "Caprese",
+      "ingredients": [
+        "tomatoes",
+        "mozzarella",
+        "rucola",
+        "parmesan",
+        "cream"
+      ],
+      "weight": 430,
+      "price": 240,
+      "day": "Tuesday"
+    },
+    {
+      "name": "Pepperoni",
+      "ingredients": [
+        "tomatoes",
+        "mozzarella",
+        "salami pepperoni"
+      ],
+      "weight": 420,
+      "price": 265,
+      "day": "Wednesday"
+    },
+    {
+      "name": "Jugliano",
+      "ingredients": [
+        "tomatoes",
+        "chicken fillet",
+        "cream",
+        "basil",
+        "bell pepper",
+        "feta"
+      ],
+      "weight": 470,
+      "price": 225,
+      "day": "Thursday"
+    },
+    {
+      "name": "Carbonara",
+      "ingredients": [
+        "eggs",
+        "mozzarella",
+        "pancetta",
+        "parmesan"
+      ],
+      "weight": 400,
+      "price": 227,
+      "day": "Friday"
+    },
+    {
+      "name": "Di Polo",
+      "ingredients": [
+        "tomatoes",
+        "mozzarella",
+        "smoked chicken fillet",
+        "red onion",
+        "eggs",
+        "cream"
+      ],
+      "weight": 540,
+      "price": 268,
+      "day": "Saturday"
+    },
+    {
+      "name": "Pancetta",
+      "ingredients": [
+        "tomatoes",
+        "mozzarella",
+        "pancetta",
+        "basil",
+        "dried onions",
+        "mushrooms"
+      ],
+      "weight": 490,
+      "price": 263,
+      "day": "Sunday"
+    }
+  ]
+}
