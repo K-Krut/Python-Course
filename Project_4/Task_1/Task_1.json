@@ -1,0 +1,36 @@
+{
+    "Events": [
+        {
+            "name": "SMM Day 2021",
+            "place": "Online",
+            "time": "10:00",
+            "date": "28.1.2022",
+            "price": 450,
+            "tickets": 499
+        },
+        {
+            "name": "AWS Tech Conference",
+            "place": "Online",
+            "date": "19.12.2021",
+            "time": "10:00",
+            "price": 500,
+            "tickets": 995
+        },
+        {
+            "name": "Azerbaijan iGaming Affiliate Conference",
+            "place": "Baku",
+            "date": "1.12.2021",
+            "time": "12:00",
+            "price": 4000,
+            "tickets": 1192
+        },
+        {
+            "name": "Head of Digital Day",
+            "place": "Online",
+            "date": "25.11.2021",
+            "time": "10:00",
+            "price": 700,
+            "tickets": 675
+        }
+    ]
+}

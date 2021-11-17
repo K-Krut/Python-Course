@@ -1,0 +1,108 @@
+{
+    "Data": {
+        "56e44233-423e-11ec-aa2a-5405dbc1cc23": {
+            "event": "Azerbaijan iGaming Affiliate Conference",
+            "place": "Baku",
+            "time": "1.12.2021 12:00",
+            "ticket_type": "standard",
+            "price": 4000,
+            "purchase_date": "2021-11-10 17:53:25.489809"
+        },
+        "72e1b2de-423e-11ec-94f5-5405dbc1cc23": {
+            "event": "Head of Digital Day",
+            "place": "Online",
+            "time": "25.11.2021 10:00",
+            "ticket_type": "student",
+            "price": 350,
+            "purchase_date": "2021-11-10 17:54:12.450234"
+        },
+        "a1068d12-423e-11ec-9231-5405dbc1cc23": {
+            "event": "AWS Tech Conference",
+            "place": "Online",
+            "time": "19.10.2021 10:00",
+            "ticket_type": "student",
+            "price": 250,
+            "purchase_date": "2021-11-10 17:55:29.865927"
+        },
+        "7846652c-4241-11ec-9404-5405dbc1cc23": {
+            "event": "Head of Digital Day",
+            "place": "Online",
+            "time": "25.11.2021 10:00",
+            "ticket_type": "standard",
+            "price": 700,
+            "purchase_date": "2021-11-10 18:15:49.988949"
+        },
+        "92171a4c-4241-11ec-bf51-5405dbc1cc23": {
+            "event": "Azerbaijan iGaming Affiliate Conference",
+            "place": "Baku",
+            "time": "1.12.2021 12:00",
+            "ticket_type": "standard",
+            "price": 4000,
+            "purchase_date": "2021-11-10 18:16:33.297780"
+        },
+        "b70c6e7d-4241-11ec-9ab5-5405dbc1cc23": {
+            "event": "Head of Digital Day",
+            "place": "Online",
+            "time": "25.11.2021 10:00",
+            "ticket_type": "standard",
+            "price": 700,
+            "purchase_date": "2021-11-10 18:17:35.304537"
+        },
+        "4b003c88-4242-11ec-a9af-5405dbc1cc23": {
+            "event": "AWS Tech Conference",
+            "place": "Online",
+            "time": "19.12.2021 10:00",
+            "ticket_type": "standard",
+            "price": 500,
+            "purchase_date": "2021-11-10 18:21:43.526420"
+        },
+        "e6f2d837-4242-11ec-995f-5405dbc1cc23": {
+            "event": "Head of Digital Day",
+            "place": "Online",
+            "time": "25.11.2021 10:00",
+            "ticket_type": "standard",
+            "price": 700,
+            "purchase_date": "2021-11-10 18:26:05.163224"
+        },
+        "027a52c1-4243-11ec-ae4e-5405dbc1cc23": {
+            "event": "Azerbaijan iGaming Affiliate Conference",
+            "place": "Baku",
+            "time": "1.12.2021 12:00",
+            "ticket_type": "standard",
+            "price": 4000,
+            "purchase_date": "2021-11-10 18:26:51.350565"
+        },
+        "188ab5ca-4243-11ec-beb4-5405dbc1cc23": {
+            "event": "AWS Tech Conference",
+            "place": "Online",
+            "time": "19.12.2021 10:00",
+            "ticket_type": "standard",
+            "price": 500,
+            "purchase_date": "2021-11-10 18:27:28.366854"
+        },
+        "61d6d61c-43d4-11ec-bc6a-5405dbc1cc23": {
+            "event": "Head of Digital Day",
+            "place": "Online",
+            "time": "25.11.2021 10:00",
+            "ticket_type": "standard",
+            "price": 700,
+            "purchase_date": "2021-11-12 18:19:59.532013"
+        },
+        "4ae439e5-447a-11ec-941c-5405dbc1cc23": {
+            "event": "Head of Digital Day",
+            "place": "Online",
+            "time": "25.11.2021 10:00",
+            "ticket_type": "standard",
+            "price": 700,
+            "purchase_date": "2021-11-13 14:07:37.492265"
+        },
+        "e9dd4cdb-447a-11ec-a981-5405dbc1cc23": {
+            "event": "Head of Digital Day",
+            "place": "Online",
+            "time": "25.11.2021 10:00",
+            "ticket_type": "standard",
+            "price": 700,
+            "purchase_date": "2021-11-13 14:12:04.198600"
+        }
+    }
+}
