@@ -1,0 +1,40 @@
+{
+  "Sauces": [
+    {
+      "name": "Pesto",
+      "ingredients": [
+        "olive oil",
+        "garlic",
+        "parmesan",
+        "basil",
+        "lemon"
+      ],
+      "weight": 50,
+      "price": 40
+    },
+    {
+      "name": "Garlic",
+      "ingredients": [
+        "butter",
+        "garlic",
+        "flour",
+        "oregano",
+        "milk",
+        "parmesan"
+      ],
+      "weight": 50,
+      "price": 35
+    },
+    {
+      "name": "Classic",
+      "ingredients": [
+        "tomato paste",
+        "oregano",
+        "garlic",
+        "paprika"
+      ],
+      "weight": 50,
+      "price": 25
+    }
+  ]
+}

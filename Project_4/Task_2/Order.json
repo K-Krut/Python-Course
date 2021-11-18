@@ -17,6 +17,18 @@
             "weight": 460,
             "price": 265,
             "purchase_date": "2021-11-12 13:47:19.893169"
+        },
+        "dc92060e-4861-11ec-85a8-5405dbc1cc23": {
+            "name": "Jugliano",
+            "weight": 520,
+            "price": 265,
+            "purchase_date": "2021-11-18 13:22:57.167015"
+        },
+        "816b1343-4866-11ec-8dcd-5405dbc1cc23": {
+            "name": "Jugliano",
+            "weight": 470,
+            "price": 225,
+            "purchase_date": "2021-11-18 13:56:06.517027"
         }
     }
 }
