@@ -100,15 +100,6 @@ class Calendar:
             raise ValueError('Invalid data type')
         return self._cmp(other) != 0
 
-    def __str__(self):
-        """Return the string representation of the current group
-               **Example**:
-               .. doctest::
-                   # >>>print(Calendar(2020, 2, 12))
-                   2020/2/12
-        """
-        return f'{self._year}/{self._month}/{self._day}'
-
     def __iadd__(self, other):
         """ a += b """
         if not isinstance(other, Calendar):
@@ -145,6 +136,14 @@ class Calendar:
             _month = 12
         return Calendar(_year, _month, _day)
 
+        def __str__(self):
+        """Return the string representation of the current group
+               **Example**:
+               .. doctest::
+                   # >>>print(Calendar(2020, 2, 12))
+                   2020/2/12
+        """
+        return f'{self._year}/{self._month}/{self._day}'
 
 A = Calendar(2020, 2, 12)
 B = Calendar(2020, 2, 5)
@@ -160,6 +159,9 @@ D += F
 print(D)
 D -= F
 print(D)
+
+
+
 
 
 
@@ -190,7 +192,7 @@ print(D)
 #                 __year += 1
 #                 break
 #     return Calendar(__year + y, __month + m, __day + 1)
-#
+
 # def __sub__(self, d=0, m=0, y=0):
 #     global __day, __month, __year
 #     __day, __month, __year = self._day,  self._month, self._year
@@ -223,7 +225,7 @@ print(D)
 #                 self._year += 1
 #                 break
 #     return self
-#
+
 # def __isub__(self, d=0, m=0, y=0):
 #     for i in range(d):
 #         self._day -= 1
@@ -278,7 +280,7 @@ print(D)
 #                 __year += 1
 #                 break
 #     return Calendar(__year + y, __month + m, __day + 1)
-#
+
 # def __sub__(self, d=0, m=0, y=0):
 #     global __day, __month, __year
 #     __day, __month, __year = self._day,  self._month, self._year
