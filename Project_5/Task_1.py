@@ -35,32 +35,32 @@ class Rational:
         return 0 if a == b else 1 if a > b else -1
 
     def __eq__(a, b):
-        if not isinstance(a, Rational):
+        if not isinstance(b, Rational):
             raise ValueError('Invalid data type')
         return a._cmp(b) == 0
 
     def __le__(a, b):
-        if not isinstance(a, Rational):
+        if not isinstance(b, Rational):
             raise ValueError('Invalid data type')
         return a._cmp(b) <= 0
 
     def __lt__(a, b):
-        if not isinstance(a, Rational):
+        if not isinstance(b, Rational):
             raise ValueError('Invalid data type')
         return a._cmp(b) < 0
 
     def __ge__(a, b):
-        if not isinstance(a, Rational):
+        if not isinstance(b, Rational):
             raise ValueError('Invalid data type')
         return a._cmp(b) >= 0
 
     def __gt__(a, b):
-        if not isinstance(a, Rational):
+        if not isinstance(b, Rational):
             raise ValueError('Invalid data type')
         return a._cmp(b) > 0
 
     def __ne__(a, b):
-        if not isinstance(a, Rational):
+        if not isinstance(b, Rational):
             raise ValueError('Invalid data type')
         return a._cmp(b) != 0
 
@@ -68,12 +68,8 @@ class Rational:
         return bool(a._numerator)
 
     def __str__(self):
-        return f'{self._numerator}' if self._denominator == 1 else f'{self._numerator}/{self._denominator}'
-
-    @property
-    def get_normal_format(self):
-        return f'{self._numerator}' if self._denominator == 1 else f'{self._numerator}/{self._denominator}'
-
+        return f'{self._numerator}/{self._denominator}'
+   
     @property
     def get_float_point_format(self):
         return f'{round(self._numerator / self._denominator, 2)}'
@@ -99,7 +95,7 @@ print(
 )
 
 print(
-    fraction_1.get_normal_format,
+    fraction_1,
     fraction_1.get_float_point_format
 )
 
