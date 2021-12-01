@@ -1,15 +1,8 @@
-# 1. Modify the class Rational of Lab No2 to perform the following tasks:
-# - adding two Rational numbers. The result should be stored in reduced form;
-# - subtracting two Rational numbers. The result should be stored in reduced form;
-# - multiplying two Rational numbers. The result should be stored in reduced form;
-# - dividing two Rational numbers. The result should be stored in reduced form;
-# - comparison two Rational numbers.
-# 2.
 # TI-01
 # Create a class CALENDAR. Define methods for creating and working with a CALENDAR instances and overload operations^
 # "+=, -=" - for adding and subtracting days, months, years to a given date
 # "==, !=, >, >=, <, <=" - for comparing dates.
-import math
+
 
 MIN_YEAR = 1
 MAX_YEAR = 9999
@@ -18,6 +11,17 @@ _DAYS_BEFORE_MONTH = [0]
 
 
 class Calendar:
+    """Class for creating right fractions
+    Operators:
+    __str__
+    __eq__, __le__, __lt__, __ge__, __gt__, __ne__
+    __iadd__, __isub__, __mul__, __truediv__
+    Methods:
+    _cmp()
+    Attributes:
+    __slots__
+    year(), month(), day(), _date()
+    """
     __slots__ = '_year', '_month', '_day'
 
     def __init__(self, year, month, day):
@@ -53,45 +57,60 @@ class Calendar:
 
     @property
     def _date(self):
+        """tuple of date -- (year, month, day)"""
         return self.year, self._month, self._day
 
     def _cmp(a, b):
+        """Function for comparison"""
         return 0 if a._date == b._date else 1 if a._date > b._date else -1
 
     def __eq__(self, other):
+        """a = b """
         if not isinstance(other, Calendar):
             raise ValueError('Invalid data type')
         return self._cmp(other) == 0
 
     def __le__(self, other):
+        """a <= b """
         if not isinstance(other, Calendar):
             raise ValueError('Invalid data type')
         return self._cmp(other) <= 0
 
     def __lt__(self, other):
+        """ a < b """
         if not isinstance(other, Calendar):
             raise ValueError('Invalid data type')
         return self._cmp(other) < 0
 
     def __ge__(self, other):
+        """ a >= b """
         if not isinstance(other, Calendar):
             raise ValueError('Invalid data type')
         return self._cmp(other) >= 0
 
     def __gt__(self, other):
+        """a > b """
         if not isinstance(other, Calendar):
             raise ValueError('Invalid data type')
         return self._cmp(other) > 0
 
     def __ne__(self, other):
+        """ a != b """
         if not isinstance(other, Calendar):
             raise ValueError('Invalid data type')
         return self._cmp(other) != 0
 
     def __str__(self):
+        """Return the string representation of the current group
+               **Example**:
+               .. doctest::
+                   # >>>print(Calendar(2020, 2, 12))
+                   2020/2/12
+        """
         return f'{self._year}/{self._month}/{self._day}'
 
     def __iadd__(self, other):
+        """ a += b """
         if not isinstance(other, Calendar):
             raise ValueError('Invalid data type')
         _day = self._day + other._day
@@ -111,6 +130,7 @@ class Calendar:
         return Calendar(_year, _month, _day)
 
     def __isub__(self, other):
+        """ a -= b """
         if not isinstance(other, Calendar):
             raise ValueError('Invalid data type')
         _day = self._day - other._day
