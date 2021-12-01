@@ -111,9 +111,6 @@ class Calendar:
         if _day > _DAYS_IN_MONTH[self._month]:
             _day %= _DAYS_IN_MONTH[self._month]
             _month += 1
-            # _day -= _DAYS_IN_MONTH[self._month] > 0
-            # if self._year % 4 == 0 and (self._year % 100 != 0 or self._year % 400 == 0):
-            #     _month += 2
         if _month > 12:
             _month %= 12
             _year += 1
