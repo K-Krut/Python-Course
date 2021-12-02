@@ -29,9 +29,9 @@ class Rational:
             raise ZeroDivisionError(f'Rational({numerator}, 0)')
         self._numerator = numerator
         self._denominator = denominator
-        # g = math.gcd(numerator, denominator)
-        # self._numerator = numerator // g
-        # self._denominator = denominator // g
+        g = math.gcd(numerator, denominator)
+        self._numerator = numerator // g
+        self._denominator = denominator // g
 
     @property
     def numerator(self):
