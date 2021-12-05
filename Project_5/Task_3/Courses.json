@@ -3,7 +3,7 @@
     "Local": [
       {
         "name": "PYTHON DEVELOPMENT",
-        "teacher": "",
+        "teacher": "9d9dc42c-55c1-11ec-8f22-5405dbc1cc23",
         "duration": 65,
         "program": ["Основи програмування", " Python Pro", "Веброзробка на Python/Django"],
         "capacity": 150,
@@ -12,7 +12,7 @@
       },
       {
         "name": "C++ DEVELOPMENT",
-        "teacher": "",
+        "teacher": "9d9dc42c-55c1-11ec-8f22-5405dbc1cc23",
         "duration": 36,
         "program": ["Основи програмування", "C++ Pro"],
         "capacity": 250,
@@ -21,16 +21,16 @@
       },
       {
         "name": "JAVASCRIPT DEVELOPMENT",
-        "teacher": "",
+        "teacher": "b3e3542e-55c1-11ec-a38e-5405dbc1cc23",
         "duration": 160,
-        "program": ["Frontend", "JavaScript Professional", "React.js","Курс Angular 8"],
+        "program": ["Frontend", "JavaScript Professional", "React.js", "Курс Angular 8"],
         "capacity": 100,
         "price": 43000,
         "type": "online"
       },
       {
         "name": "GAME DEVELOPMENT",
-        "teacher": " ",
+        "teacher": "a40e3195-55c1-11ec-b82c-5405dbc1cc23",
         "duration": 200,
         "program": ["Основи програмування", "C# /.NET Pro", "Unity3D", "Геймдизайн"],
         "capacity": 180,
@@ -44,18 +44,18 @@
   {
     "OffSet": [
       {
-        "name": "C# / .NET DEVELOPMENT",
-        "teacher": " ",
+        "name": "C#/.NET DEVELOPMENT",
+        "teacher": "a40e3195-55c1-11ec-b82c-5405dbc1cc23",
         "duration": 201,
-        "program": ["Основи програмування", "C# /.NET Pro", "Веброзробка на .NET", "Додатки Windows на WPF"],
+        "program": ["Основи програмування", "C#/.NET Pro", "Веброзробка на .NET", "Додатки Windows на WPF"],
         "capacity": 200,
         "price": 31000,
         "place": "Kiev"
       },
       {
         "name": "PROJECT MANAGEMENT",
-        "teacher": " ",
-        "duration": 7,
+        "teacher": "bc63a243-55c1-11ec-8c68-5405dbc1cc23",
+        "duration": 155,
         "program": ["Project Management"],
         "capacity": 250,
         "price": 21750,
@@ -63,7 +63,7 @@
       },
       {
         "name": "WEB DESIGN",
-        "teacher": " ",
+        "teacher": "c28c6924-55c1-11ec-9ad9-5405dbc1cc23",
         "duration": 162,
         "program": ["Основи графічного дизайну і графічні редактори", "HTML + CSS для дизайнерів3", "Web Design Pro"],
         "capacity": 300,
@@ -72,7 +72,7 @@
       },
       {
         "name": "BUSINESS ANALYSIS",
-        "teacher": " ",
+        "teacher": "bc63a243-55c1-11ec-8c68-5405dbc1cc23",
         "duration": 120,
         "program": ["Business Analysis Fundamentals", "Data Science/Machine Learning Fundamentals", "Business Analysis Advanced"],
         "capacity": 222,

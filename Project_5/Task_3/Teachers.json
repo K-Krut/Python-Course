@@ -1,7 +1,42 @@
 {
-  "Teachers": [
-    {
-
+  "Teachers": {
+    "9d9dc42c-55c1-11ec-8f22-5405dbc1cc23": {
+      "name": "Sara",
+      "surname": "Kye",
+      "courses": [
+        "PYTHON DEVELOPMENT",
+        "C++ DEVELOPMENT"
+      ]
+    },
+    "a40e3195-55c1-11ec-b82c-5405dbc1cc23": {
+      "name": "Jake",
+      "surname": "Hess",
+      "courses": [
+        "C#/.NET DEVELOPMENT",
+        "GAME DEVELOPMENT"
+      ]
+    },
+    "b3e3542e-55c1-11ec-a38e-5405dbc1cc23": {
+      "name": "Alex",
+      "surname": "Smith",
+      "courses": [
+        "JAVASCRIPT DEVELOPMENT"
+      ]
+    },
+    "bc63a243-55c1-11ec-8c68-5405dbc1cc23": {
+      "name": "Liam",
+      "surname": "McCarthy",
+      "courses": [
+        "PROJECT MANAGEMENT",
+        "BUSINESS ANALYSIS"
+      ]
+    },
+    "c28c6924-55c1-11ec-9ad9-5405dbc1cc23": {
+      "name": "Taylor",
+      "surname": "Newby",
+      "courses": [
+        "WEB DESIGN"
+      ]
     }
-  ]
+  }
 }

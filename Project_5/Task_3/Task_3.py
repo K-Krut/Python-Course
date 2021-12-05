@@ -16,6 +16,7 @@
 # created only through the ICourseFactory interface implemented by a class
 # named CourseFactory. Write a program that will form courses of software academy.
 import json
+import uuid
 
 ACADEMY_LOCATION = 'Lviv'
 
@@ -117,19 +118,23 @@ class ILocalCourse:
         self._file = filename
         self.x = x
 
-    def create_course(self, type):
-        if type == 'local':
-            pass
-            #запись в джейсон
-        elif type == 'offset':
-            pass
-            # Запись в джейсон
-        else:
-            raise IOError('Invalid input')
+    def create_local_course(self):
+        pass
+        # if type == 'local':
+        #     pass
+        #     #запись в джейсон
+        # elif type == 'offset':
+        #     pass
+        #     # Запись в джейсон
+        # else:
+        #     raise IOError('Invalid input')
 
     def delete_course(self, Course):
         pass
     # удаление из джейсона
+
+    def see_courses(self):
+        pass
 
     def __str__(self):
         return '\n'.join([f'{self._name}\nProgram: {self._program}\nTime:{self._duration}'
@@ -141,6 +146,7 @@ class Teacher:
         self._name = name
         self._surname = surname
         self._course = course
+        self._id = uuid.uuid1()
 
     @property
     def _teacher_name(self):
@@ -154,6 +160,18 @@ class Teacher:
     def _course(self):
         return self._course
 
+    @property
+    def _teacher(self):
+        return self._name, self._surname
+
+    @property
+    def get_teacher_info(self):
+        return self._name, self._surname, self._course
+
+    @property
+    def get_teacher_id(self):
+        return self._id
+
     @_teacher_name.setter
     def _teacher_name(self, name):
         self._teacher_name = name
@@ -166,9 +184,10 @@ class Teacher:
     def _course(self, new_course):
         self._course = new_course
 
-    @property
-    def get_teacher_info(self):
-        return self._name, self._surname, self._course
+    @_teacher.setter
+    def _teacher(self, info):
+        self._name = info[0]
+        self._surname = info[1]
 
     @get_teacher_info.setter
     def get_teacher_info(self, info):
@@ -181,7 +200,16 @@ class Teacher:
 
 
 class Teachers:
-    def __init__(self):
+    def __init__(self, filename):
+        self._file = filename
+
+    def add_teacher(self):
+        pass
+
+    def delete_teacher(self):
+        pass
+
+    def see_teachers(self):
         pass
 
 
@@ -194,8 +222,4 @@ class Academy:
 
 # delete course, add course, view my courses, enroll course
 # view all courses, view my courses, add teacher, delete teacher
-
-
-
-
 
