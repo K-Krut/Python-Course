@@ -4,9 +4,9 @@
       "name": "PYTHON DEVELOPMENT",
       "duration": 65,
       "program": [
-        "Основи програмування",
-        "Python Pro",
-        "Веброзробка на Python/Django"
+        "Fundamentals of programming",
+         "Python Pro",
+         "Python / Django Web Development"
       ],
       "capacity": 150,
       "price": 21000,
@@ -17,7 +17,7 @@
       "name": "C++ DEVELOPMENT",
       "duration": 36,
       "program": [
-        "Основи програмування",
+        "Fundamentals of programming",
         "C++ Pro"
       ],
       "capacity": 250,
@@ -32,7 +32,7 @@
         "Frontend",
         "JavaScript Professional",
         "React.js",
-        "Курс Angular 8"
+        "Angular 8"
       ],
       "capacity": 100,
       "price": 43000,
@@ -43,10 +43,10 @@
       "name": "GAME DEVELOPMENT",
       "duration": 200,
       "program": [
-        "Основи програмування",
-        "C# /.NET Pro",
-        "Unity3D",
-        "Геймдизайн"
+        "Fundamentals of programming",
+         "C # /.NET Pro",
+         "Unity3D",
+         "Game Design"
       ],
       "capacity": 180,
       "price": 40000,
@@ -59,10 +59,10 @@
       "name": "C#/.NET DEVELOPMENT",
       "duration": 201,
       "program": [
-        "Основи програмування",
-        "C#/.NET Pro",
-        "Веброзробка на .NET",
-        "Додатки Windows на WPF"
+        "Fundamentals of programming",
+         "C # / .NET Pro",
+         ".NET Web Development",
+         "Windows WPF Applications"
       ],
       "capacity": 200,
       "price": 31000,
@@ -84,8 +84,8 @@
       "name": "WEB DESIGN",
       "duration": 162,
       "program": [
-        "Основи графічного дизайну і графічні редактори",
-        "HTML + CSS для дизайнерів3",
+        "Fundamentals of graphic design and graphic editors",
+        "HTML + CSS for designers",
         "Web Design Pro"
       ],
       "capacity": 300,

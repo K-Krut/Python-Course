@@ -119,19 +119,66 @@ class ILocalCourse:
         self._file = filename
         self.x = None
 
-    def create_local_course(self):
+    @staticmethod
+    def get_teacher(teacher):
+        with open('Teachers.json') as file:
+            teachers_data = json.load(file)
+        for i in teachers_data:
+            if teacher == teachers_data[i]['name'] + ' ' + teachers_data[i]['surname']:
+                return i
+        return "None"
 
+    def create_local_course(self, name, teacher, duration, program, type_course, capacity, price):
         with open(self._file) as file:
             database = json.load(file)
         if "Local" not in database:
             database["Local"] = {}
+            course_id = uuid.uuid1()
+            if not (course_id in database['Local']):
+                database['Local'][course_id] = {
+                    'name': name,
+                    'duration': duration,
+                    'program': program,
+                    'capacity': capacity,
+                    'price': price,
+                    'type': type_course,
+                    'teacher_id': self.get_teacher(teacher)
+                }
+                json.dump(database, open('Tickets_data.json', 'w'), indent=4)
+            else:
+                return self.create_local_course(name, teacher, duration, program, type_course, capacity, price)
 
-    def delete_course(self, Course):
-        pass
+    def create_offset_course(self, name, teacher, duration, program, place, capacity, price):
+        with open(self._file) as file:
+            database = json.load(file)
+        if "Local" not in database:
+            database["Local"] = {}
+            course_id = uuid.uuid1()
+            if not (course_id in database['Local']):
+                database['Local'][course_id] = {
+                    'name': name,
+                    'duration': duration,
+                    'program': program,
+                    'capacity': capacity,
+                    'price': price,
+                    'place': place,
+                    'teacher_id': self.get_teacher(teacher)
+                }
+                json.dump(database, open('Tickets_data.json', 'w'), indent=4)
+            else:
+                return self.create_offset_course(name, teacher, duration, program, place, capacity, price)
+
+    def delete_course(self, id_course):
+        with open(self._file) as file:
+            data = json.load(file)
+        if id_course in data["Local"]:
+            data["Local"].pop(id_course)
+        elif id_course in data["OffSet"]:
+            data["OffSet"].pop(id_course)
+        else:
+            raise ValueError('Invalid input')
+
     # удаление из джейсона
-
-    def see_courses(self):
-        pass
 
     def __str__(self):
         return '\n'.join([f'{i.name}' for i in self.x])
@@ -220,4 +267,3 @@ class Academy:
 
 # delete course, add course, view my courses, enroll course
 # view all courses, view my courses, add teacher, delete teacher
-
