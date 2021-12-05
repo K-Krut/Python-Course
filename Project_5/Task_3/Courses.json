@@ -1,84 +1,110 @@
-[
-  {
-    "Local": [
-      {
-        "name": "PYTHON DEVELOPMENT",
-        "teacher": "9d9dc42c-55c1-11ec-8f22-5405dbc1cc23",
-        "duration": 65,
-        "program": ["Основи програмування", " Python Pro", "Веброзробка на Python/Django"],
-        "capacity": 150,
-        "price": 21000,
-        "type": "offline"
-      },
-      {
-        "name": "C++ DEVELOPMENT",
-        "teacher": "9d9dc42c-55c1-11ec-8f22-5405dbc1cc23",
-        "duration": 36,
-        "program": ["Основи програмування", "C++ Pro"],
-        "capacity": 250,
-        "price": 16000,
-        "type": "online"
-      },
-      {
-        "name": "JAVASCRIPT DEVELOPMENT",
-        "teacher": "b3e3542e-55c1-11ec-a38e-5405dbc1cc23",
-        "duration": 160,
-        "program": ["Frontend", "JavaScript Professional", "React.js", "Курс Angular 8"],
-        "capacity": 100,
-        "price": 43000,
-        "type": "online"
-      },
-      {
-        "name": "GAME DEVELOPMENT",
-        "teacher": "a40e3195-55c1-11ec-b82c-5405dbc1cc23",
-        "duration": 200,
-        "program": ["Основи програмування", "C# /.NET Pro", "Unity3D", "Геймдизайн"],
-        "capacity": 180,
-        "price": 40000,
-        "type": "online"
-      }
-    ]
+{
+  "Local": {
+    "a4b1c6bb-aace-440c-81e2-5fbf55be7e5b": {
+      "name": "PYTHON DEVELOPMENT",
+      "duration": 65,
+      "program": [
+        "Основи програмування",
+        "Python Pro",
+        "Веброзробка на Python/Django"
+      ],
+      "capacity": 150,
+      "price": 21000,
+      "type": "offline",
+      "teacher_id": "9d9dc42c-55c1-11ec-8f22-5405dbc1cc23"
+    },
+    "707ee018-8908-4fed-8b5e-307136da4d4a": {
+      "name": "C++ DEVELOPMENT",
+      "duration": 36,
+      "program": [
+        "Основи програмування",
+        "C++ Pro"
+      ],
+      "capacity": 250,
+      "price": 16000,
+      "type": "online",
+      "teacher_id": "9d9dc42c-55c1-11ec-8f22-5405dbc1cc23"
+    },
+    "eeff497e-001e-4f51-8087-306f46af3a33": {
+      "name": "JAVASCRIPT DEVELOPMENT",
+      "duration": 160,
+      "program": [
+        "Frontend",
+        "JavaScript Professional",
+        "React.js",
+        "Курс Angular 8"
+      ],
+      "capacity": 100,
+      "price": 43000,
+      "type": "online",
+      "teacher_id": "b3e3542e-55c1-11ec-a38e-5405dbc1cc23"
+    },
+    "5b7b0d4a-e34a-4c2a-940d-ec06a56130c2": {
+      "name": "GAME DEVELOPMENT",
+      "duration": 200,
+      "program": [
+        "Основи програмування",
+        "C# /.NET Pro",
+        "Unity3D",
+        "Геймдизайн"
+      ],
+      "capacity": 180,
+      "price": 40000,
+      "type": "online",
+      "teacher_id": "a40e3195-55c1-11ec-b82c-5405dbc1cc23"
+    }
   },
-
-
-  {
-    "OffSet": [
-      {
-        "name": "C#/.NET DEVELOPMENT",
-        "teacher": "a40e3195-55c1-11ec-b82c-5405dbc1cc23",
-        "duration": 201,
-        "program": ["Основи програмування", "C#/.NET Pro", "Веброзробка на .NET", "Додатки Windows на WPF"],
-        "capacity": 200,
-        "price": 31000,
-        "place": "Kiev"
-      },
-      {
-        "name": "PROJECT MANAGEMENT",
-        "teacher": "bc63a243-55c1-11ec-8c68-5405dbc1cc23",
-        "duration": 155,
-        "program": ["Project Management"],
-        "capacity": 250,
-        "price": 21750,
-        "place": "Kharkov"
-      },
-      {
-        "name": "WEB DESIGN",
-        "teacher": "c28c6924-55c1-11ec-9ad9-5405dbc1cc23",
-        "duration": 162,
-        "program": ["Основи графічного дизайну і графічні редактори", "HTML + CSS для дизайнерів3", "Web Design Pro"],
-        "capacity": 300,
-        "price": 38000,
-        "place": "Kiev"
-      },
-      {
-        "name": "BUSINESS ANALYSIS",
-        "teacher": "bc63a243-55c1-11ec-8c68-5405dbc1cc23",
-        "duration": 120,
-        "program": ["Business Analysis Fundamentals", "Data Science/Machine Learning Fundamentals", "Business Analysis Advanced"],
-        "capacity": 222,
-        "price": 45000,
-        "place": "Ternopil"
-      }
-    ]
+  "OffSet": {
+    "471566f3-ca65-4dc3-a912-676a771ccf99": {
+      "name": "C#/.NET DEVELOPMENT",
+      "duration": 201,
+      "program": [
+        "Основи програмування",
+        "C#/.NET Pro",
+        "Веброзробка на .NET",
+        "Додатки Windows на WPF"
+      ],
+      "capacity": 200,
+      "price": 31000,
+      "place": "Kiev",
+      "teacher_id": "a40e3195-55c1-11ec-b82c-5405dbc1cc23"
+    },
+    "f363bea7-d487-41c0-88a0-681c83f23a82": {
+      "name": "PROJECT MANAGEMENT",
+      "duration": 155,
+      "program": [
+        "Project Management"
+      ],
+      "capacity": 250,
+      "price": 21750,
+      "place": "Kharkov",
+      "teacher_id": "bc63a243-55c1-11ec-8c68-5405dbc1cc23"
+    },
+    "a83e8f4d-4136-4511-a6fd-2683e81a412d": {
+      "name": "WEB DESIGN",
+      "duration": 162,
+      "program": [
+        "Основи графічного дизайну і графічні редактори",
+        "HTML + CSS для дизайнерів3",
+        "Web Design Pro"
+      ],
+      "capacity": 300,
+      "price": 38000,
+      "place": "Kiev",
+      "teacher_id": "c28c6924-55c1-11ec-9ad9-5405dbc1cc23"
+    },
+    "165a9cc9-9f0f-4cc8-99a7-98eea7c1583f": {
+      "name": "BUSINESS ANALYSIS",
+      "duration": 120,
+      "program": [
+        "Business Analysis Fundamentals",
+        "Data Science/Machine Learning Fundamentals",
+        "Business Analysis Advanced"
+      ],
+      "capacity": 222,
+      "price": 45000,
+      "place": "Ternopil",
+      "teacher_id": "bc63a243-55c1-11ec-8c68-5405dbc1cc23"
+    }
   }
-]
+}

@@ -29,6 +29,7 @@ class Course:
         self._program = program
         self._capacity = capacity
         self._price = price
+        self._course_id = uuid.uuid1()
         # self._description = description
 
     @property
@@ -114,20 +115,16 @@ class OffSetCourse(Course):
 
 
 class ILocalCourse:
-    def __init__(self, filename, x):
+    def __init__(self, filename='Courses.json'):
         self._file = filename
-        self.x = x
+        self.x = None
 
     def create_local_course(self):
-        pass
-        # if type == 'local':
-        #     pass
-        #     #запись в джейсон
-        # elif type == 'offset':
-        #     pass
-        #     # Запись в джейсон
-        # else:
-        #     raise IOError('Invalid input')
+
+        with open(self._file) as file:
+            database = json.load(file)
+        if "Local" not in database:
+            database["Local"] = {}
 
     def delete_course(self, Course):
         pass
@@ -137,8 +134,9 @@ class ILocalCourse:
         pass
 
     def __str__(self):
-        return '\n'.join([f'{self._name}\nProgram: {self._program}\nTime:{self._duration}'
-                          f'Pleces left: {self._capaity}'] for i in self.x)
+        return '\n'.join([f'{i.name}' for i in self.x])
+        # return '\n'.join([f'{i._name}\nProgram: {i._program}\nTime:{i._duration}'
+        #                   f'Pleces left: {i._capaity}'] for i in self.x)
 
 
 class Teacher:
