@@ -1,0 +1,84 @@
+[
+  {
+    "Local": [
+      {
+        "name": "PYTHON DEVELOPMENT",
+        "teacher": "",
+        "duration": 65,
+        "program": ["Основи програмування", " Python Pro", "Веброзробка на Python/Django"],
+        "capacity": 150,
+        "price": 21000,
+        "type": "offline"
+      },
+      {
+        "name": "C++ DEVELOPMENT",
+        "teacher": "",
+        "duration": 36,
+        "program": ["Основи програмування", "C++ Pro"],
+        "capacity": 250,
+        "price": 16000,
+        "type": "online"
+      },
+      {
+        "name": "JAVASCRIPT DEVELOPMENT",
+        "teacher": "",
+        "duration": 160,
+        "program": ["Frontend", "JavaScript Professional", "React.js","Курс Angular 8"],
+        "capacity": 100,
+        "price": 43000,
+        "type": "online"
+      },
+      {
+        "name": "GAME DEVELOPMENT",
+        "teacher": " ",
+        "duration": 200,
+        "program": ["Основи програмування", "C# /.NET Pro", "Unity3D", "Геймдизайн"],
+        "capacity": 180,
+        "price": 40000,
+        "type": "online"
+      }
+    ]
+  },
+
+
+  {
+    "OffSet": [
+      {
+        "name": "C# / .NET DEVELOPMENT",
+        "teacher": " ",
+        "duration": 201,
+        "program": ["Основи програмування", "C# /.NET Pro", "Веброзробка на .NET", "Додатки Windows на WPF"],
+        "capacity": 200,
+        "price": 31000,
+        "place": "Kiev"
+      },
+      {
+        "name": "PROJECT MANAGEMENT",
+        "teacher": " ",
+        "duration": 7,
+        "program": ["Project Management"],
+        "capacity": 250,
+        "price": 21750,
+        "place": "Kharkov"
+      },
+      {
+        "name": "WEB DESIGN",
+        "teacher": " ",
+        "duration": 162,
+        "program": ["Основи графічного дизайну і графічні редактори", "HTML + CSS для дизайнерів3", "Web Design Pro"],
+        "capacity": 300,
+        "price": 38000,
+        "place": "Kiev"
+      },
+      {
+        "name": "BUSINESS ANALYSIS",
+        "teacher": " ",
+        "duration": 120,
+        "program": ["Business Analysis Fundamentals", "Data Science/Machine Learning Fundamentals", "Business Analysis Advanced"],
+        "capacity": 222,
+        "price": 45000,
+        "place": "Ternopil"
+      }
+    ]
+  }
+]
