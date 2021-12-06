@@ -30,65 +30,71 @@ class Course:
         self._capacity = capacity
         self._price = price
         self._course_id = uuid.uuid1()
+
+        self._teacher.get_course = (self._name, str(self._course_id))
         # self._description = description
 
     @property
-    def _name_course(self):
+    def get_name_course(self):
         return self._name
 
     @property
-    def _teacher(self):
+    def get_teacher(self):
         return self._teacher
 
     @property
-    def _duration(self):
+    def get_duration(self):
         return self._duration
 
     @property
-    def _program(self):
+    def get_program(self):
         return self._program
 
     @property
-    def _capacity(self):
-        return self._capaity
+    def get_capacity(self):
+        return self._capacity
 
-    @_name_course.setter
-    def _name_course(self, name):
-        self._name_course = name
+    @get_name_course.setter
+    def get_name_course(self, name):
+        self._name = name
 
-    @_teacher.setter
-    def _teacher(self, teacher):
+    @get_teacher.setter
+    def get_teacher(self, teacher):
         self._teacher = teacher
 
-    @_duration.setter
-    def _duration(self, time):
+    @get_duration.setter
+    def get_duration(self, time):
         self._duration = time
 
-    @_program.setter
-    def _program(self, prog):
-        self._program = prog
+    @get_program.setter
+    def get_program(self, program):
+        self._program = program
 
-    @_capacity.setter
-    def _capacity(self, num):
+    @get_capacity.setter
+    def get_capacity(self, num):
         self._capacity = num
 
+    # def __str__(self):
+    #     return f'{self.__dict__}'
+
+    # def __repr__(self):
     def __str__(self):
         return f'{self._name}\nProgram:{self._program}\nTeacher: {self._teacher}\n' \
                f'Time:{self._duration}\tPlaces: {self._capacity}'
 
 
 class LocalCourse(Course):
-    def __init__(self, name, teacher, duration, program, type, capacity, price):
+    def __init__(self, name, teacher, duration, program, type_, capacity, price):
         super.__init__(name, teacher, duration, program, capacity, price)
-        self._type = type
+        self._type = type_
         # self._place = place
 
     @property
-    def _type(self):
+    def get_type(self):
         return self._type
 
-    @_type.setter
-    def _type(self, new_type):
+    @get_type.setter
+    def get_type(self, new_type):
         self._type = new_type
 
     def __str__(self):
@@ -98,15 +104,15 @@ class LocalCourse(Course):
 
 class OffSetCourse(Course):
     def __init__(self, name, teacher, duration, program, capacity, price, place):
-        super.__init__(name, teacher, duration, program, capacity, price)
+        super.__init__(name, teacher, duration, program, capacity, price, place)
         self._place = place
 
     @property
-    def _place(self):
+    def get_place(self):
         return self._place
 
-    @_place.setter
-    def _place(self, town):
+    @get_place.setter
+    def get_place(self, town):
         self._place = town
 
     def __str__(self):
@@ -114,7 +120,7 @@ class OffSetCourse(Course):
                f'Time:{self._duration}\tPlace: {self._place}'
 
 
-class ILocalCourse:
+class ICourses:
     def __init__(self, filename='Courses.json'):
         self._file = filename
         self.x = None
@@ -146,7 +152,8 @@ class ILocalCourse:
                 }
                 json.dump(database, open('Tickets_data.json', 'w'), indent=4)
             else:
-                return self.create_local_course(name, teacher, duration, program, type_course, capacity, price)
+                pass
+                # return self.create_local_course(name, teacher, duration, program, type_course, capacity, price)
 
     def create_offset_course(self, name, teacher, duration, program, place, capacity, price):
         with open(self._file) as file:
@@ -166,7 +173,8 @@ class ILocalCourse:
                 }
                 json.dump(database, open('Tickets_data.json', 'w'), indent=4)
             else:
-                return self.create_offset_course(name, teacher, duration, program, place, capacity, price)
+                pass
+                # return self.create_offset_course(name, teacher, duration, program, place, capacity, price)
 
     def delete_course(self, id_course):
         with open(self._file) as file:
@@ -181,32 +189,36 @@ class ILocalCourse:
     # удаление из джейсона
 
     def __str__(self):
-        return '\n'.join([f'{i.name}' for i in self.x])
+        with open(self._file) as file:
+            data = json.load(file)
+        return '\n'.join([f'{data["Local"][i].keys()} -- {data["Local"][i].values()}' for i in data["Local"]])
+
+        # return '\n'.join([f'{i.name}' for i in self.x])
         # return '\n'.join([f'{i._name}\nProgram: {i._program}\nTime:{i._duration}'
-        #                   f'Pleces left: {i._capaity}'] for i in self.x)
+        #                   f'Places left: {i._capacity}'] for i in self.x)
 
 
 class Teacher:
-    def __init__(self, name, surname, course):
+    def __init__(self, name, surname, course=None):
         self._name = name
         self._surname = surname
         self._course = course
         self._id = uuid.uuid1()
 
     @property
-    def _teacher_name(self):
+    def get_teacher_name(self):
         return self._name
 
     @property
-    def _teacher_surname(self):
+    def get_teacher_surname(self):
         return self._surname
 
     @property
-    def _course(self):
+    def get_course(self):
         return self._course
 
     @property
-    def _teacher(self):
+    def get_teacher(self):
         return self._name, self._surname
 
     @property
@@ -216,31 +228,34 @@ class Teacher:
     @property
     def get_teacher_id(self):
         return self._id
+    #
+    # @get_teacher_name.setter
+    # def get_teacher_name(self, Name):
+    #     self._teacher_name = Name
+    #
+    # @get_teacher_surname.setter
+    # def get_teacher_surname(self, surname):
+    #     self._teacher_surname = surname
+    #
+    # @get_course.setter
+    # def _course(self, new_course):
+    #     self._course = new_course
+    #
+    # @get_teacher.setter
+    # def _teacher(self, info):
+    #     self._name = info[0]
+    #     self._surname = info[1]
+    #
+    # @get_teacher_info.setter
+    # def get_teacher_info(self, info):
+    #     self._name = info.get[0]
+    #     self._surname = info.get[1]
+    #     self._course = info.get[2]
 
-    @_teacher_name.setter
-    def _teacher_name(self, name):
-        self._teacher_name = name
+    # def __str__(self):
+    #     return f'{self._name} {self._surname}'
 
-    @_teacher_surname.setter
-    def _teacher_surname(self, surname):
-        self._teacher_surname = surname
-
-    @_course.setter
-    def _course(self, new_course):
-        self._course = new_course
-
-    @_teacher.setter
-    def _teacher(self, info):
-        self._name = info[0]
-        self._surname = info[1]
-
-    @get_teacher_info.setter
-    def get_teacher_info(self, info):
-        self._name = info.get[0]
-        self._surname = info.get[1]
-        self._course = info.get[2]
-
-    def __str__(self):
+    def __repr__(self):
         return f'{self._name} {self._surname} -- {self._course}'
 
 
@@ -264,6 +279,10 @@ class Academy:
         self._location = location
 
 # оббертки а не наследование
-
 # delete course, add course, view my courses, enroll course
 # view all courses, view my courses, add teacher, delete teacher
+# name, teacher, duration, program, type_, capacity, price):(self, name, teacher, duration, program, capacity, price):
+
+
+# print(ICourses())
+print(Course('gfh', Teacher("AAA", "BBB"), 34, ('gfh', 'fgh', 'fgh', 'fh'), 765, 42000))
