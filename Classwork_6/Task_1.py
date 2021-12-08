@@ -151,9 +151,18 @@ class Organization:
 
     def __next__(self):
         if self._counter < len(self._workers):
-            return self._workers[self._counter]
             self._counter += 1
-        raise StopIteration
+            return self._workers[self._counter - 1]
+        else:
+            raise StopIteration
+
+    # @staticmethod
+    def get_workers_by_experience(self):
+        amount = 0
+        for i in self._workers:
+            if i.get_work_experience > WORK_EXPERIENCE:
+                amount += 1
+        return amount
 
     def __str__(self):
         return f'{self._name}\nLocation: {self._location}' + '\n'.join(str(i) for i in self._workers)
@@ -161,18 +170,18 @@ class Organization:
 
 Worker_1 = Worker('N', 'SN', '12.10.1999', 'male', 'SMTH', 'dsg', 'aaaa', 23444, 3)
 Worker_2 = Worker('K', 'Surname', '12.10.1999', 'male', 'SMTH', 'FGH', 'DFG', 23444, 3)
-Worker_3 = Worker('F', 'Surname', '12.10.1999', 'male', 'SMTH', 'FGH', 'DFG', 23444, 3)
-Worker_4 = Worker('L', 'Surname', '12.10.1999', 'male', 'SMTH', 'FGH', 'DFG', 23444, 3)
+Worker_3 = Worker('F', 'Surname', '12.10.1999', 'male', 'SMTH', 'FGH', 'DFG', 23444, 24)
+Worker_4 = Worker('L', 'Surname', '12.10.1999', 'male', 'SMTH', 'FGH', 'DFG', 23444, 12)
 Worker_5 = Worker('M', 'Surname', '12.10.1999', 'male', 'SMTH', 'FGH', 'DFG', 23444, 3)
 
 Organization_1 = Organization('SOME_NAME', 'Somewhere', Worker_1, Worker_2, Worker_3, Worker_4, Worker_5)
 
-# print(Organization_1)
-#
+print(Organization_1)
 
 for i in Organization_1:
     print(i)
 
+# print(Organization_1.get_workers_by_experience())
 
 
 # def f(*arg):
