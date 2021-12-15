@@ -1,0 +1,110 @@
+{
+  "Local": {
+    "a4b1c6bb-aace-440c-81e2-5fbf55be7e5b": {
+      "name": "PYTHON DEVELOPMENT",
+      "duration": 65,
+      "program": [
+        "Fundamentals of programming",
+        "Python Pro",
+        "Python / Django Web Development"
+      ],
+      "capacity": 150,
+      "price": 21000,
+      "type": "offline",
+      "teacher": "Sara Kye"
+    },
+    "707ee018-8908-4fed-8b5e-307136da4d4a": {
+      "name": "C++ DEVELOPMENT",
+      "duration": 36,
+      "program": [
+        "Fundamentals of programming",
+        "C++ Pro"
+      ],
+      "capacity": 250,
+      "price": 16000,
+      "type": "online",
+      "teacher": "Sara Kye"
+    },
+    "eeff497e-001e-4f51-8087-306f46af3a33": {
+      "name": "JAVASCRIPT DEVELOPMENT",
+      "duration": 160,
+      "program": [
+        "Frontend",
+        "JavaScript Professional",
+        "React.js",
+        "Angular 8"
+      ],
+      "capacity": 100,
+      "price": 43000,
+      "type": "online",
+      "teacher": "Alex Smith"
+    },
+    "5b7b0d4a-e34a-4c2a-940d-ec06a56130c2": {
+      "name": "GAME DEVELOPMENT",
+      "duration": 200,
+      "program": [
+        "Fundamentals of programming",
+        "C # /.NET Pro",
+        "Unity3D",
+        "Game Design"
+      ],
+      "capacity": 180,
+      "price": 40000,
+      "type": "online",
+      "teacher": "Jake Hess"
+    }
+  },
+  "OffSet": {
+    "471566f3-ca65-4dc3-a912-676a771ccf99": {
+      "name": "C#/.NET DEVELOPMENT",
+      "duration": 201,
+      "program": [
+        "Fundamentals of programming",
+        "C # / .NET Pro",
+        ".NET Web Development",
+        "Windows WPF Applications"
+      ],
+      "capacity": 200,
+      "price": 31000,
+      "place": "Kiev",
+      "teacher": "Jake Hess"
+    },
+    "f363bea7-d487-41c0-88a0-681c83f23a82": {
+      "name": "PROJECT MANAGEMENT",
+      "duration": 155,
+      "program": [
+        "Project Management"
+      ],
+      "capacity": 250,
+      "price": 21750,
+      "place": "Kharkov",
+      "teacher": "Liam McCarthy"
+    },
+    "a83e8f4d-4136-4511-a6fd-2683e81a412d": {
+      "name": "WEB DESIGN",
+      "duration": 162,
+      "program": [
+        "Fundamentals of graphic design and graphic editors",
+        "HTML + CSS for designers",
+        "Web Design Pro"
+      ],
+      "capacity": 300,
+      "price": 38000,
+      "place": "Kiev",
+      "teacher": "Taylor Newby"
+    },
+    "165a9cc9-9f0f-4cc8-99a7-98eea7c1583f": {
+      "name": "BUSINESS ANALYSIS",
+      "duration": 120,
+      "program": [
+        "Business Analysis Fundamentals",
+        "Data Science/Machine Learning Fundamentals",
+        "Business Analysis Advanced"
+      ],
+      "capacity": 222,
+      "price": 45000,
+      "place": "Ternopil",
+      "teacher": "Liam McCarthy"
+    }
+  }
+}
