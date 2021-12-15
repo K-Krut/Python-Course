@@ -139,6 +139,49 @@ class ICourses:
         self._file = filename
         self.x = None
 
+
+
+
+{
+  "9d9dc42c-55c1-11ec-8f22-5405dbc1cc23": {
+    "name": "Sara",
+    "surname": "Kye",
+    "courses": {
+        "a4b1c6bb-aace-440c-81e2-5fbf55be7e5b": "PYTHON DEVELOPMENT",
+        "707ee018-8908-4fed-8b5e-307136da4d4a": "C++ DEVELOPMENT"
+      }
+  },
+  "a40e3195-55c1-11ec-b82c-5405dbc1cc23": {
+    "name": "Jake",
+    "surname": "Hess",
+    "courses": {
+       "471566f3-ca65-4dc3-a912-676a771ccf99" : "C#/.NET DEVELOPMENT",
+      "5b7b0d4a-e34a-4c2a-940d-ec06a56130c2" : "GAME DEVELOPMENT"
+    }
+  },
+  "b3e3542e-55c1-11ec-a38e-5405dbc1cc23": {
+    "name": "Alex",
+    "surname": "Smith",
+    "courses": {
+      "eeff497e-001e-4f51-8087-306f46af3a33": "JAVASCRIPT DEVELOPMENT"
+      }
+  },
+  "bc63a243-55c1-11ec-8c68-5405dbc1cc23": {
+    "name": "Liam",
+    "surname": "McCarthy",
+    "courses": {
+      "f363bea7-d487-41c0-88a0-681c83f23a82": "PROJECT MANAGEMENT",
+      "165a9cc9-9f0f-4cc8-99a7-98eea7c1583f": "BUSINESS ANALYSIS"
+    }
+  },
+  "c28c6924-55c1-11ec-9ad9-5405dbc1cc23": {
+    "name": "Taylor",
+    "surname": "Newby",
+    "courses": {
+      "a83e8f4d-4136-4511-a6fd-2683e81a412d": "WEB DESIGN"
+      }
+  }
+}
     # @staticmethod
     # def get_teacher(teacher):
     #     with open('Teachers.json') as file:
