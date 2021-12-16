@@ -1,37 +1,222 @@
-# A software academy teaches two types of courses: local courses that
-# are held in some of the academy’s local labs and offsite courses
-# held in some other town outside of the academy’s headquarters.
-#
-# Each course has a name, a teacher assigned to teach it and a course
-# program (sequence of topics).
-#
-# Each teacher has a name and knows the courses he or she teaches.
-#
-# Both courses and teachers could be printed in human-readable text form.
-#
-# All your courses should implement ICourse. Teachers should implement ITeacher.
-#
-# Local and offsite courses should implement
-# ILocalCourse and IOffsiteCourse respectively. Courses and teachers should be
-# created only through the ICourseFactory interface implemented by a class
-# named CourseFactory. Write a program that will form courses of software academy.
 import json
 import uuid
+from abc import abstractmethod, ABC
 
 ACADEMY_LOCATION = 'Lviv'
 
 
-class Course:
-    def __init__(self, name, teacher, duration, program, capacity, price):
+class ICourse(ABC):
+    @property
+    @abstractmethod
+    def name_course_(self):
+        pass
+
+    @property
+    @abstractmethod
+    def teacher_(self):
+        pass
+
+    @property
+    @abstractmethod
+    def course_duration_(self):
+        pass
+
+    @property
+    @abstractmethod
+    def program_(self):
+        pass
+
+    @property
+    @abstractmethod
+    def capacity_(self):
+        pass
+
+    @property
+    @abstractmethod
+    def price_(self):
+        pass
+
+    @property
+    @abstractmethod
+    def id_course_(self):
+        pass
+
+    @id_course_.setter
+    @abstractmethod
+    def id_course_(self, id):
+        pass
+
+    @property
+    @abstractmethod
+    def teacher_id_(self):
+        pass
+
+    @price_.setter
+    @abstractmethod
+    def price_(self, cost):
+        pass
+
+    @name_course_.setter
+    @abstractmethod
+    def name_course_(self, name):
+        pass
+
+    @teacher_.setter
+    @abstractmethod
+    def teacher_(self, teacher):
+        pass
+
+    @course_duration_.setter
+    @abstractmethod
+    def course_duration_(self, time):
+        pass
+
+    @program_.setter
+    @abstractmethod
+    def program_(self, program):
+        pass
+
+    @capacity_.setter
+    @abstractmethod
+    def capacity_(self, num):
+        pass
+
+    @abstractmethod
+    def __str__(self):
+        pass
+
+
+class ILocalCourse(ABC):
+    @property
+    @abstractmethod
+    def course_type_(self):
+        pass
+
+    @course_type_.setter
+    @abstractmethod
+    def course_type_(self, new_type):
+        pass
+
+
+class IOffsiteCourse(ABC):
+    @property
+    @abstractmethod
+    def place_(self):
+        pass
+
+    @place_.setter
+    @abstractmethod
+    def place_(self, town):
+        pass
+
+
+class ITeacher(ABC):
+    @property
+    @abstractmethod
+    def teacher_name_(self):
+        pass
+
+    @property
+    @abstractmethod
+    def teacher_surname_(self):
+        pass
+
+    @property
+    @abstractmethod
+    def courses_(self):
+        pass
+
+    @property
+    @abstractmethod
+    def get_teacher(self):
+        pass
+
+    @property
+    @abstractmethod
+    def teacher_info_(self):
+        pass
+
+    @property
+    @abstractmethod
+    def teacher_id_(self):
+        pass
+
+    @teacher_name_.setter
+    @abstractmethod
+    def teacher_name_(self, name):
+        pass
+
+    @teacher_surname_.setter
+    @abstractmethod
+    def teacher_surname_(self, surname):
+        pass
+
+    @courses_.setter
+    @abstractmethod
+    def courses_(self, new_courses):
+        pass
+
+    @get_teacher.setter
+    def get_teacher(self, info):
+        pass
+
+    @teacher_info_.setter
+    def teacher_info_(self, info):
+        pass
+
+    @abstractmethod
+    def __str__(self):
+        pass
+
+    @abstractmethod
+    def __repr__(self):
+        pass
+
+
+class ICourseFactory(ABC):
+    @abstractmethod
+    def add_teacher(self, teacher):
+        pass
+
+    @abstractmethod
+    def add_local_course(self, course_):
+        pass
+
+    @abstractmethod
+    def add_offset_course(self, course_):
+        pass
+
+    @abstractmethod
+    def see_courses(self):
+        pass
+
+    @abstractmethod
+    def see_teachers(self):
+        pass
+
+    @abstractmethod
+    def __str__(self):
+        pass
+
+
+class Course(ICourse):
+    def __init__(self, name, teacher, duration_, program, capacity, price):
+        if self.check_course_exist(name):
+            raise ValueError(f'course with the {name} exist')
         self._name = name
         self._teacher = teacher
-        self._duration = duration
+        self._duration = duration_
         self._program = program
         self._capacity = capacity
         self._price = price
         self._course_id = uuid.uuid1()
         self._teacher = teacher[0]
         self._teacher_id = teacher[1]
+
+    @staticmethod
+    def check_course_exist(name):
+        data_courses = json.load(open('Courses_.json'))
+        return any(j == name for j in [i["name"] for i in (data_courses['Local'] | data_courses['OffSet']).values()])
 
     @property
     def name_course_(self):
@@ -40,10 +225,6 @@ class Course:
     @property
     def teacher_(self):
         return self._teacher
-
-    @property
-    def duration_(self):
-        return self._duration
 
     @property
     def program_(self):
@@ -65,6 +246,10 @@ class Course:
     def id_course_(self, id):
         self._course_id = id
 
+    @property
+    def teacher_id_(self):
+        return self._teacher_id
+
     @price_.setter
     def price_(self, cost):
         self._price = cost
@@ -77,9 +262,13 @@ class Course:
     def teacher_(self, teacher):
         self._teacher = teacher
 
-    # @duration_.setter
-    # def duration(self, time):
-    #     self._duration = time
+    @property
+    def course_duration_(self):
+        return self._duration
+
+    @course_duration_.setter
+    def course_duration_(self, duration_):
+        self._duration = duration_
 
     @program_.setter
     def program_(self, program):
@@ -91,19 +280,19 @@ class Course:
 
     def __str__(self):
         return f'{self._name}\nProgram:{self._program}\nTeacher: {self._teacher}\n' \
-               f'Time:{self._duration}\tPlaces: {self._capacity}'
+               f'Time:{self._duration} hours Places: {self._capacity} Price: {self._price} UAH'
 
 
-class LocalCourse(Course):
+class LocalCourse(Course, ILocalCourse):
     def __init__(self, name, teacher, duration, program, type_, capacity, price):
-        if self.check_course(name):
-            raise ValueError('course exist')
-        super(LocalCourse, self).__init__(name, teacher, duration, program, capacity, price)
+        self._name = None
+        if self.check_course_exist(name):
+            raise ValueError(f'course {name} exist')
+        super().__init__(name, teacher, duration, program, capacity, price)
         self._type = type_
-        # self._place = place
 
     @staticmethod
-    def check_course(course):
+    def check_course_exist(course):
         data = json.load(open('Courses_.json'))['Local']
         return any(data[i]['name'] == course for i in data)
 
@@ -119,18 +308,18 @@ class LocalCourse(Course):
 
     def __str__(self):
         return f'{self._name}\nProgram:{self._program}\nTeacher: {self._teacher}\n' \
-               f'Time:{self._duration}\tType: {self._type}'
+               f'Time:{self._duration} hours\tType: {self._type}\tPrice: {self._price} UAH'
 
 
-class OffSetCourse(Course):
+class OffSetCourse(Course, IOffsiteCourse):
     def __init__(self, name, teacher, duration, program, capacity, price, place):
-        if self.check_course(name):
-            raise ValueError('course exist')
+        if self.check_course_exist(name):
+            raise ValueError(f'course {name} exist')
         super(OffSetCourse, self).__init__(name, teacher, duration, program, capacity, price)
         self._place = place
 
     @staticmethod
-    def check_course(course):
+    def check_course_exist(course):
         data = json.load(open('Courses_.json'))['OffSet']
         return any(data[i]['name'] == course for i in data)
 
@@ -144,108 +333,29 @@ class OffSetCourse(Course):
 
     def __str__(self):
         return f'{self._name}\nProgram:{self._program}\nTeacher: {self._teacher}\n' \
-               f'Time:{self._duration}\tPlace: {self._place}'
+               f'Time:{self._duration} hours\tPlace: {self._place}\tPrice: {self._price} UAH'
 
 
-class ICourses:
-    def __init__(self, filename='Courses_.json', *args):
-        self._file = filename
-
-    @staticmethod
-    def get_teacher(teacher):  # Объект Teacher
-        with open('Teachers.json') as file:
-            teachers_data = json.load(file)
-        for i in teachers_data:
-            if teacher.teacher_id_ in teachers_data[i]['name'] + ' ' + teachers_data[i]['surname']:
-                return i
-        return None
-
-    def file_course_write(self, type_of_course, course):
-        database = json.load(open(self._file))
-        if type_of_course not in database:
-            database[type_of_course] = {}
-        if course.id_course_ in database[type_of_course] and \
-                any(database[i]['name'] == course.name_course_ for i in database):
-            raise ValueError('course exist')
-        database[type_of_course][course.id_course_] = {
-            'name': course.name_course_,
-            'duration': course.duration_,
-            'program': course.program_,
-            'capacity': course.capacitsy_,
-            'price': course.price_,
-            'type': course.type_,
-            'teacher': course.teacher_,
-        }
-        json.dump(database, open(self._file, 'w'), indent=4)
-
-    def add_local_course(self, course_):
-        if not isinstance(course_, LocalCourse):
-            raise TypeError('invalid input')
-        self.file_course_write('Local', course_)
-
-    def add_offset_course(self, course_):
-        if not isinstance(course_, OffSetCourse):
-            raise TypeError('invalid input')
-        self.file_course_write('OffSet', course_)
-
-    # def create_offset_course(self, course):
-    #     with open(self._file) as file:
-    #         database = json.load(file)
-    #     if "Local" not in database:
-    #         database["Local"] = {}
-    #         if not (course. in database['Local']):
-    #             database['Local'][course_id] = {
-    #                 'name': name,
-    #                 'duration': duration,
-    #                 'program': program,
-    #                 'capacity': capacity,
-    #                 'price': price,
-    #                 'place': place,
-    #                 'teacher_id': teacher.get_teacher()
-    #             }
-    #             json.dump(database, open('Tickets_data.json', 'w'), indent=4)
-    #         else:
-    #             pass
-    #             # return self.create_offset_course(name, teacher, duration, program, place, capacity, price)
-    def delete_course(self, id_course):
-        with open(self._file) as file:
-            data = json.load(file)
-        if id_course in data["Local"]:
-            data["Local"].pop(id_course)
-            json.dump(data, open(self._file, 'w'), indent=4)
-        elif id_course in data["OffSet"]:
-            data["OffSet"].pop(id_course)
-            json.dump(data, open(self._file, 'w'), indent=4)
-        else:
-            raise ValueError('Invalid input')
-
-    # удаление из джейсона
-
-    def __str__(self):
-        database = json.load(open(self._file))
-        local = database["Local"]
-        offset = database['OffSet']
-        data = database["Local"] | database['OffSet']
-        return '\n'.join([''.join([f'{j}: {i[j]}\n' for j in i.keys()]) for i in data.values()])
-
-
-class Teacher:
+class Teacher(ITeacher):
     def __init__(self, name, surname, courses=[]):
         self._name = name
         self._surname = surname
         self._courses = courses
         self._id = uuid.uuid1()
 
-
     def add_courses(self, *courses):
-        # data_courses = json.load(open('Courses_.json')
-        # for i in data_courses['Local'] + data_courses['Offset']:
-        #     pass
+        if not self.check_all_courses_exist(courses):
+            raise ValueError('not all courses exist')
         data = json.load(open('Teachers.json'))
         for i in data:
             if str(self._id) == i:
                 i["courses"] = courses
-        json.dump(data, open(self._file, 'w'), indent=4)
+        json.dump(data, open('Teachers.json', 'w'), indent=4)
+
+    @staticmethod
+    def check_all_courses_exist(courses):
+        data_courses = json.load(open('Courses_.json'))
+        return all(i in [i["name"] for i in (data_courses['Local'] | data_courses['OffSet']).values()] for i in courses)
 
     @property
     def teacher_name_(self):
@@ -265,7 +375,7 @@ class Teacher:
 
     @property
     def teacher_info_(self):
-        return self._name, self._surname, self._id, self._courses,
+        return f'{self._name} {self._surname}', f'{self._id}'
 
     @property
     def teacher_id_(self):
@@ -279,113 +389,135 @@ class Teacher:
     def teacher_surname_(self, surname):
         self._surname = surname
 
-    # @courses_.setter
-    # def get_course(self, new_courses):
-    #     self._courses = new_courses
-    #
-    # @get_teacher.setter
-    # def get_teacher(self, info):
-    #     self._name = info[0]
-    #     self._surname = info[1]
-    #
-    # @teacher_info_.setter
-    # def get_teacher_info(self, info):
-    #     self._name = info.get[0]
-    #     self._surname = info.get[1]
-    #     self._courses = info.get[2]
+    @courses_.setter
+    def courses_(self, new_courses):
+        self._courses = new_courses
+
+    @get_teacher.setter
+    def get_teacher(self, info):
+        self._name = info[0]
+        self._surname = info[1]
+
+    @teacher_info_.setter
+    def teacher_info_(self, info):
+        self._name = info.get[0]
+        self._surname = info.get[1]
+        self._courses = info.get[2]
 
     def __str__(self):
-        return f'{self._name} {self._surname}'
+        return f'{self._name} {self._surname}\n'
 
     def __repr__(self):
         return f'{self._name} {self._surname} -- {self._courses}'
 
 
-class ITeachers:
-    def __init__(self, filename='Teachers.json'):
-        self._file = filename
+class CourseFactory(ICourseFactory):
+    def __init__(self):
+        self._location = ACADEMY_LOCATION
 
     def add_teacher(self, teacher):
         if not isinstance(teacher, Teacher):
             raise TypeError('invalid input')
         self.file_teacher_write(teacher)
 
-    def delete_teacher(self, teacher_id):
-        data = json.load(open(self._file))
-        if teacher_id not in data:
-            raise ValueError('teacher don`t exist')
-        data.pop(teacher_id)
-        json.dump(data, open(self._file, 'w'), indent=4)
-
     def file_teacher_write(self, teacher):
-        with open(self._file) as file:
+        with open('Teachers.json') as file:
             database = json.load(file)
             id_of_teacher = str(teacher.teacher_id_)
-        if id_of_teacher in database and \
-                any(i['name'] + i['surname'] == teacher.teacher_name_ + teacher.teacher_surname_ for i in database):
+        if self.check_teacher_exist(teacher):
             raise ValueError('teacher exist')
         database[id_of_teacher] = {
             'name': teacher.teacher_name_,
             'surname': teacher.teacher_surname_,
             'courses': []
         }
-        json.dump(database, open(self._file, 'w'), indent=4)
+        json.dump(database, open('Teachers.json', 'w'), indent=4)
 
-    def __str__(self):
+    @staticmethod
+    def check_teacher_exist(teacher):
+        database = json.load(open('Teachers.json'))
+        return str(teacher.teacher_id_) in database and \
+               any(i['name'] + i['surname'] == teacher.teacher_name_ + teacher.teacher_surname_ for i in database)
+
+    def add_local_course(self, course_):
+        if not isinstance(course_, LocalCourse):
+            raise TypeError('invalid input')
+        self.file_course_write('Local', course_)
+
+    def add_offset_course(self, course_):
+        if not isinstance(course_, OffSetCourse):
+            raise TypeError('invalid input')
+        self.file_course_write('OffSet', course_)
+
+    @staticmethod
+    def file_course_write(type_of_course, course):
+        database = json.load(open('Courses_.json'))
+        course_id = str(course.id_course_)
+        if type_of_course not in database:
+            database[type_of_course] = {}
+        if course_id in database[type_of_course] and \
+                any(database[i]['name'] == course.name_course_ for i in database):
+            raise ValueError('course exist')
+        if type_of_course == 'Local':
+            database[type_of_course][course_id] = {
+                'name': course.name_course_,
+                'duration': course.course_duration_,
+                'program': course.program_,
+                'capacity': course.capacity_,
+                'price': course.price_,
+                'type': course.course_type_,
+                'teacher': course.teacher_,
+            }
+        if type_of_course == 'OffSet':
+            database[type_of_course][course_id] = {
+                'name': course.name_course_,
+                'duration': course.course_duration_,
+                'program': course.program_,
+                'capacity': course.capacity_,
+                'price': course.price_,
+                'place': course.place_,
+                'teacher': course.teacher_,
+            }
+        json.dump(database, open('Courses_.json', 'w'), indent=4)
+
+    @staticmethod
+    def delete_teacher(teacher_id):
+        data = json.load(open('Teachers.json'))
+        if teacher_id not in data:
+            raise ValueError('teacher don`t exist')
+        data.pop(teacher_id)
+        json.dump(data, open('Teachers.json', 'w'), indent=4)
+
+    @staticmethod
+    def delete_course(id_course):
+        with open('Courses_.json') as file:
+            data = json.load(file)
+        if id_course in data["Local"]:
+            data["Local"].pop(id_course)
+            json.dump(data, open('Courses_.json', 'w'), indent=4)
+        elif id_course in data["OffSet"]:
+            data["OffSet"].pop(id_course)
+            json.dump(data, open('Courses_.json', 'w'), indent=4)
+        else:
+            raise ValueError('Invalid input')
+
+    def see_courses(self):
+        database = json.load(open('Courses_.json'))
+        return '\n'.join([''.join([f'{j}: {i[j]}\n' for j in i.keys()])
+                          for i in (database["Local"] | database['OffSet']).values()])\
+
+
+    def see_teachers(self):
         teachers_data = json.load(open('Teachers.json'))
         return '\n\n'.join([f'{teachers_data[i]["name"]} {teachers_data[i]["surname"]}\n'
                             f'Courses:\n{teachers_data[i]["courses"]}' for i in teachers_data])
 
-    def __repr__(self):
-        teachers_data = json.load(open('Teachers.json'))
-        return '\n\n'.join([f'{teachers_data[i]["name"]} {teachers_data[i]["surname"]}\n'
-                            f'Courses:\n{teachers_data[i]["courses"]}\nID: {i}' for i in teachers_data])
-
-
-class Academy:
-    # ICourseFactory
-    def __init__(self, courses_, teachers_):
-        if not (isinstance(courses_, ICourses) or isinstance(teachers_, ITeachers)):
-            raise TypeError('invalid input')
-        self._location = ACADEMY_LOCATION
-        self._courses = courses_
-        self._teachers = teachers_
-
-    def see_courses(self):
-        return f'Courses:\n{self._courses}'
-
-    def see_teachers(self):
-        return f'Teachers:\n{self._teachers}'
-
     def __str__(self):
-        return f'Courses:\n{self._courses}\n\n\nTeachers:\n{self._teachers}'
+        return f'Courses: {self.see_courses()}\n\nTeachers: {self.see_teachers()}'
 
 
-# оббертки а не наследование
-# delete course, add course, view my courses, enroll course
-# view all courses, view my courses, add teacher, delete teacher
-# name, teacher, duration, program, type_, capacity, price):(self, name, teacher, duration, program, capacity, price):
-
-
-# print(ICourses())
-# A = Course('AAA', Teacher("A", "B"), 34, ('gfh', 'fgh', 'fgh', 'fh'), 765, 42000)
-# B = Course('BBB', Teacher("C", "D"), 34, ('gfh', 'fgh', 'fgh', 'fh'), 765, 42000)
-# C = Course('CCC', Teacher("E", "F"), 34, ('gfh', 'fgh', 'fgh', 'fh'), 765, 42000)
-# D = Course('DDD', Teacher("G", "H"), 34, ('gJGFfh', 'fgh', 'fgh', 'fh'), 765, 42000)
-# G = Course('TEST', Teacher("G", "H"), 34, ('gJGFfh', 'fgh', 'fgh', 'fh'), 765, 42000)
-# E = Academy(A, B, C, D)
-# # E = Academy([])
-# print(E)
-
-#
-# K = LocalCourse('TESTLOCAL', Teacher("G_TEST", "H"), 56, ['34', '34'], "online", 233, 45555)
-# F = ICourses()
-# print(F)
-# F.create_local_course(K)
-# print(F)
-
-# Course_1 = LocalCourse('PYTHON DEVELOPMENT', )
-Teachers_obj = ITeachers()
-Courses_obj = ICourses()
-Academy_obj = Academy(Courses_obj, Teachers_obj)
-print(Academy_obj)
+CourseFactory_1 = CourseFactory()
+print(CourseFactory_1)
+CourseFactory_1.add_teacher(Teacher("Sara", "Bravo"))
+CourseFactory_1.add_local_course(LocalCourse('TESTLOCAL', Teacher("NAME", "SURNAME").teacher_info_,
+                                             56, ['34', '34'], "online", 233, 45555))
